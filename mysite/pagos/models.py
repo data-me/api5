@@ -50,7 +50,7 @@ class UserPlanPaypalManager(models.Manager):
         return payment
 
 class UserPlanPaypalBill(models.Model):
-    userPlan = models.OneToOneField(UserPlan,on_delete=models.SET(0))
+    userPlan = models.OneToOneField(UserPlan,on_delete=models.CASCADE)
     # Paypal payment ID
     payment_id = models.CharField(max_length=64, db_index=True)
     # Payer ID that does not change
